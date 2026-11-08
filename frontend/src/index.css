@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-solana-bg: #FFFAF4;
+  --color-solana-blush: #FFE8E7;
+  --color-solana-rose: #FFCDCC;
+  --color-solana-coral: #EFA0A3;
+  --color-solana-cream: #EBEBBF;
+  --color-solana-moss: #B7B15A;
+  --color-solana-sky: #C8DBE4;
+  --color-solana-slate: #97B3C2;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #FFFAF4;
+    --card-bg: #ffffff;
+    --text-primary: #2d3142;
+    --text-secondary: #6c757d;
+  }
+
+  body {
+    background-color: #FFFAF4;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+}
+
+/* Custom soft scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #EFA0A3;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B7B15A;
+}
+
+/* Pulse animation for imminent deadline warning */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 160, 163, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 160, 163, 0);
+  }
+}
+
+.warning-pulse {
+  animation: softPulse 2s infinite ease-in-out;
+}
